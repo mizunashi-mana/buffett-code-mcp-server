@@ -65,41 +65,48 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
         name: 'buffett_code_get_jp_company',
         description: 'Get Japanese company information from Buffett Code',
         inputSchema: zodToJsonSchema(JPCompanyRequestSchema),
+        annotations: { readOnlyHint: true },
       },
       {
         name: 'buffett_code_get_jp_company_daily',
         description:
           'Get daily Japanese company information from Buffett Code for a specific date',
         inputSchema: zodToJsonSchema(JPCompanyDailyRequestSchema),
+        annotations: { readOnlyHint: true },
       },
       {
         name: 'buffett_code_get_jp_company_quarterly',
         description:
           'Get quarterly Japanese company information from Buffett Code for a specific year and quarter',
         inputSchema: zodToJsonSchema(JPCompanyQuarterlyRequestSchema),
+        annotations: { readOnlyHint: true },
       },
       {
         name: 'buffett_code_get_jp_company_daily_market_reaction',
         description:
           'Get the daily market reaction for a JP company as both text and stock price change rate. Currently available only for stocks with sufficient data, on or near quarterly or annual earnings announcement dates.',
         inputSchema: zodToJsonSchema(JPCompanyDailyMarketReactionRequestSchema),
+        annotations: { readOnlyHint: true },
       },
       {
         name: 'buffett_code_get_jp_company_weekly_stats',
         description:
           'Get weekly statistics calculated for the company or stock, mainly including stock price related statistics.',
         inputSchema: zodToJsonSchema(JPCompanyWeeklyStatsRequestSchema),
+        annotations: { readOnlyHint: true },
       },
       {
         name: 'buffett_code_get_jp_company_monthly_stats',
         description:
           'Get monthly statistics calculated for the company or stock, mainly including stock price related statistics.',
         inputSchema: zodToJsonSchema(JPCompanyMonthlyStatsRequestSchema),
+        annotations: { readOnlyHint: true },
       },
       {
         name: 'buffett_code_get_jp_company_monthly_kpis',
         description: 'Get monthly KPIs for a JP company.',
         inputSchema: zodToJsonSchema(JPCompanyMonthlyKpisRequestSchema),
+        annotations: { readOnlyHint: true },
       },
       {
         name: 'buffett_code_get_jp_company_quarterly_long_text_content',
@@ -108,6 +115,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
         inputSchema: zodToJsonSchema(
           JPCompanyQuarterlyLongTextContentRequestSchema
         ),
+        annotations: { readOnlyHint: true },
       },
       {
         name: 'buffett_code_get_jp_company_quarterly_major_shareholders',
@@ -116,12 +124,14 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
         inputSchema: zodToJsonSchema(
           JPCompanyQuarterlyMajorShareholdersRequestSchema
         ),
+        annotations: { readOnlyHint: true },
       },
       {
         name: 'buffett_code_get_jp_company_quarterly_segments',
         description:
           'Get segment information as disclosed in a company or stock’s securities report or quarterly report.',
         inputSchema: zodToJsonSchema(JPCompanyQuarterlySegmentsRequestSchema),
+        annotations: { readOnlyHint: true },
       },
       {
         name: 'buffett_code_get_jp_company_annually_guidance_revisions',
@@ -130,52 +140,57 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
         inputSchema: zodToJsonSchema(
           JPCompanyAnnuallyGuidanceRevisionsRequestSchema
         ),
+        annotations: { readOnlyHint: true },
       },
       {
         name: 'buffett_code_get_jp_company_similarities',
         description:
           'Get a list of companies similar to the specified company.',
         inputSchema: zodToJsonSchema(JPCompanySimilaritiesRequestSchema),
+        annotations: { readOnlyHint: true },
       },
       {
         name: 'buffett_code_get_us_company',
         description: 'Get company information from Buffett Code',
         inputSchema: zodToJsonSchema(USCompanyRequestSchema),
+        annotations: { readOnlyHint: true },
       },
       {
         name: 'buffett_code_get_us_company_daily',
         description:
           'Get daily company information from Buffett Code for a specific date',
         inputSchema: zodToJsonSchema(USCompanyDailyRequestSchema),
+        annotations: { readOnlyHint: true },
       },
       {
         name: 'buffett_code_get_us_company_quarterly',
         description:
           'Get quarterly company information from Buffett Code for a specific year and quarter',
         inputSchema: zodToJsonSchema(USCompanyQuarterlyRequestSchema),
+        annotations: { readOnlyHint: true },
       },
       {
         name: 'buffett_code_get_us_company_stocks',
         description:
           'Get company stock information from Buffett Code for a specific stock',
         inputSchema: zodToJsonSchema(USCompanyStocksRequestSchema),
+        annotations: { readOnlyHint: true },
       },
       {
         name: 'buffett_code_get_us_company_stocks_daily',
         description:
           'Get daily company stock information from Buffett Code for a specific stock and date',
         inputSchema: zodToJsonSchema(USCompanyStocksDailyRequestSchema),
+        annotations: { readOnlyHint: true },
       },
       {
         name: 'buffett_code_get_us_company_stocks_quarterly',
         description:
           'Get quarterly company stock information from Buffett Code for a specific stock and year-quarter',
         inputSchema: zodToJsonSchema(USCompanyStocksQuarterlyRequestSchema),
+        annotations: { readOnlyHint: true },
       },
-    ].map((tool) => ({
-      ...tool,
-      annotations: { readOnlyHint: true },
-    })),
+    ],
   };
 });
 
