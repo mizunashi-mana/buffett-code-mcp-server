@@ -1,0 +1,68 @@
+{
+  "dxt_version": "0.1",
+  "name": "buffett-code-mcp-server",
+  "display_name": "Buffett Code",
+  "version": "0.1.0",
+  "description": "MCP server that accesses the Buffett Code API for Japanese and US company financial data.",
+  "long_description": "A Model Context Protocol (MCP) server that exposes the Buffett Code API as tools. It provides access to Japanese and US company information including daily/quarterly financials, stock statistics, KPIs, segments, major shareholders, guidance revisions and similar companies. Requires a Buffett Code API key.",
+  "author": {
+    "name": "syucream",
+    "url": "https://github.com/syucream"
+  },
+  "homepage": "https://github.com/BuffettCode/buffett-code-mcp-server#readme",
+  "documentation": "https://github.com/BuffettCode/buffett-code-mcp-server#readme",
+  "support": "https://github.com/BuffettCode/buffett-code-mcp-server/issues",
+  "license": "MIT",
+  "keywords": ["mcp", "buffett-code", "finance", "stocks", "japan", "us"],
+  "server": {
+    "type": "node",
+    "entry_point": "dist/index.js",
+    "mcp_config": {
+      "command": "npx",
+      "args": [
+        "--yes",
+        "https://github.com/mizunashi-mana/buffett-code-mcp-server"
+      ],
+      "env": {
+        "BUFFETT_CODE_API_KEY": "${user_config.api_key}"
+      }
+    }
+  },
+  "tools_generated": false,
+  "tools": [
+    { "name": "buffett_code_get_jp_company", "description": "Get Japanese company information from Buffett Code" },
+    { "name": "buffett_code_get_jp_company_daily", "description": "Get daily Japanese company information from Buffett Code for a specific date" },
+    { "name": "buffett_code_get_jp_company_quarterly", "description": "Get quarterly Japanese company information from Buffett Code for a specific year and quarter" },
+    { "name": "buffett_code_get_jp_company_daily_market_reaction", "description": "Get the daily market reaction for a JP company as both text and stock price change rate." },
+    { "name": "buffett_code_get_jp_company_weekly_stats", "description": "Get weekly statistics calculated for the company or stock, mainly stock price related statistics." },
+    { "name": "buffett_code_get_jp_company_monthly_stats", "description": "Get monthly statistics calculated for the company or stock, mainly stock price related statistics." },
+    { "name": "buffett_code_get_jp_company_monthly_kpis", "description": "Get monthly KPIs for a JP company." },
+    { "name": "buffett_code_get_jp_company_quarterly_long_text_content", "description": "Get processed long-form text content from securities reports or quarterly reports." },
+    { "name": "buffett_code_get_jp_company_quarterly_major_shareholders", "description": "Get major shareholders information as listed in a securities report or quarterly report." },
+    { "name": "buffett_code_get_jp_company_quarterly_segments", "description": "Get segment information as disclosed in a securities report or quarterly report." },
+    { "name": "buffett_code_get_jp_company_annually_guidance_revisions", "description": "Get a list of earnings guidance revisions by fiscal year for the company or stock." },
+    { "name": "buffett_code_get_jp_company_similarities", "description": "Get a list of companies similar to the specified company." },
+    { "name": "buffett_code_get_us_company", "description": "Get company information from Buffett Code" },
+    { "name": "buffett_code_get_us_company_daily", "description": "Get daily company information from Buffett Code for a specific date" },
+    { "name": "buffett_code_get_us_company_quarterly", "description": "Get quarterly company information from Buffett Code for a specific year and quarter" },
+    { "name": "buffett_code_get_us_company_stocks", "description": "Get company stock information from Buffett Code for a specific stock" },
+    { "name": "buffett_code_get_us_company_stocks_daily", "description": "Get daily company stock information from Buffett Code for a specific stock and date" },
+    { "name": "buffett_code_get_us_company_stocks_quarterly", "description": "Get quarterly company stock information from Buffett Code for a specific stock and year-quarter" }
+  ],
+  "user_config": {
+    "api_key": {
+      "type": "string",
+      "title": "Buffett Code API Key",
+      "description": "Your Buffett Code API key. See https://docs.buffett-code.com/api/#section/認証/API",
+      "required": true,
+      "sensitive": true
+    }
+  },
+  "compatibility": {
+    "claude_desktop": ">=0.10.0",
+    "platforms": ["darwin", "win32", "linux"],
+    "runtimes": {
+      "node": ">=18.0.0"
+    }
+  }
+}
