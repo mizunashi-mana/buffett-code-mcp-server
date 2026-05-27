@@ -172,7 +172,10 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
           'Get quarterly company stock information from Buffett Code for a specific stock and year-quarter',
         inputSchema: zodToJsonSchema(USCompanyStocksQuarterlyRequestSchema),
       },
-    ],
+    ].map((tool) => ({
+      ...tool,
+      annotations: { readOnlyHint: true },
+    })),
   };
 });
 

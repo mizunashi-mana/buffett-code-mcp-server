@@ -5,9 +5,11 @@
   "main": "dist/index.js",
   "type": "module",
   "bin": {
-    "buffett-code-mcp-server": "dist/index.js"
+    "buffett-code-mcp-server": "bin/cli.mjs"
   },
   "files": [
+    "bin",
+    "src",
     "dist",
     "README.md"
   ],
@@ -46,6 +48,7 @@
     "@types/node": "^20.10.3",
     "dotenv": "^16.4.7",
     "openapi-fetch": "^0.13.7",
+    "tsx": "^4.19.3",
     "typescript": "^5.3.2",
     "zod": "^3.22.4",
     "zod-to-json-schema": "^3.22.4"
@@ -60,7 +63,6 @@
     "openapi-typescript": "^7.7.1",
     "prettier": "^3.2.2",
     "shx": "^0.3.4",
-    "ts-node": "^10.9.2",
-    "tsx": "^4.19.3"
+    "ts-node": "^10.9.2"
   }
 }
